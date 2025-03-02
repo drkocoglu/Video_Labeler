@@ -22,10 +22,10 @@ Videos or images will have different colors and background colors depending on i
 - $${\color{blue}Blue:}$$ Currently selected video/image.
 
 **Insert Bbox:** You can activate it by clicking show labels checkbox. Insert Bbox allows you add the bbox. You must hold left mouse button, and when you release, it finishes drawing it. You can move, modify the bbox. 
-**Show labels**: This checkbox allows you to load bounding boxes (bboxes) that were initially labeled and predicted using your own model. 
-**Insert Polygon:** You can activate it by clicking show polygons checkbox. Show labels checkbox allows you to load polygon that are saved and predicted. Insert Polygon allows you add Polygon. When you right mouse button, it finishes drawing polygon and connects the first and last inserted points. Delete button will delete the last point that was added. Esc button will cancel drawing polygon. You can move, modify the polygon.
-**Insert Polygon Point:** When you select a polygon, it gets activated. It allows you to add extra point to selected polygon line. This is useful for training instance and semantic segmentation models such as Mask-R-CNN, etc.
-**Delete Polygon Point:** When you select a polygon, it gets activated. It allows you to delete that specific polygon point.
+- **Show labels**: This checkbox allows you to load bounding boxes (bboxes) that were initially labeled and predicted using your own model. 
+- **Insert Polygon:** You can activate it by clicking show polygons checkbox. Show labels checkbox allows you to load polygon that are saved and predicted. Insert Polygon allows you add Polygon. When you right mouse button, it finishes drawing polygon and connects the first and last inserted points. Delete button will delete the last point that was added. Esc button will cancel drawing polygon. You can move, modify the polygon.
+- **Insert Polygon Point:** When you select a polygon, it gets activated. It allows you to add extra point to selected polygon line. This is useful for training instance and semantic segmentation models such as Mask-R-CNN, etc.
+- **Delete Polygon Point:** When you select a polygon, it gets activated. It allows you to delete that specific polygon point.
 
 **Left Side of the bbox:** 
 - The number 0 is for class 0 by default. You get the class from a text file "class.txt". The colors switch between ['blue', 'pink', 'cyan', 'green', 'black', 'orange'].
@@ -38,8 +38,11 @@ Videos or images will have different colors and background colors depending on i
 - Detected predictions will be in red color and can't be modified. They will be saved to [images or videos]/predictions/[bbox or polygon]. Predictions can be converted to normal bbox or polygons and modified later like a normal bbox for training purposes.
   - This option can save you significant amount of time if you wish to use your trained model to help you generate additional labels without having to explicitly add more labels to your video or images.
   - You convert the prediction by clicking on it first and then using the convert prediction option. You can also decide to convert all the predictions into labels but, be aware that this option will convert all of the predictions to training labels. You can still modify or delete your converted bboxes (labels) after this conversion. This option can still save you significant amount of time if there are many objects to detect in a given image/video with a small number of false predictions (mistakes).
+
 **Load prediction** checkbox will show prediction if it exists on current frame or image.
+
 **Show polygon bbox**, will draw a bbox around polygons.
+
 **Zstack labels** (trainig labels) and **predictions** exist for the same single video and the labels are from beggining frame (frame 1) to the end frame (final frame).
 - By clicking **prev, next, play/stop, reset video** buttons, you can automatically save the bboxes and polygons you drew. Otherwise, these labels may be lost (not saved).
 
