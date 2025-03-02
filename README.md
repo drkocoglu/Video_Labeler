@@ -33,6 +33,7 @@ Videos or images will have different colors and background colors depending on i
 - When you click **confirm class**, your next bbox or polygon will be will be in that class. If you selected an existing polygon or bbox, it will change the class of that bbox or polygon.
 
 **List box** will show the list of models you have. It exists in videos/models and images/models folder. By double clicking the model, you activate it.
+
 **Drop box** allows you select between, selected frame, selected video and all the inserted videos options. These options will run your model to detect predictions when you click **detect predictions**.
 - Detected predictions will be in red color and can't be modified. They will be saved to [images or videos]/predictions/[bbox or polygon]. Predictions can be converted to normal bbox or polygons and modified later like a normal bbox for training purposes.
   - This option can save you significant amount of time if you wish to use your trained model to help you generate additional labels without having to explicitly add more labels to your video or images.
