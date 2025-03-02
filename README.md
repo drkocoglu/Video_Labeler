@@ -4,7 +4,7 @@
 - This app allows user to label a video by frame or an image. Using this video labeler, one can label their videos or images to train their Computer vision models. The advantage of having your very own video labeler is that you can develop the addiitonal features that can be useful for you. For instance, this video labeler enables you to test models you built using Detectron2 or Pytorch. Please be aware that the main.py may need to be modified further for other models or libraries. 
 
 **Sponsorship/Contributions:**
-- This GUI can be improved further. We are open to the idea of further development. If you wish to contribute/sponsor this project and develop additional capabilities or improve upon the existing capabilities that you wish to use, please do not hesitate to contact us directly.
+- This GUI can be improved further. We are open to the idea of further development. If you wish to contribute/sponsor this project and develop additional capabilities or improve upon the existing capabilities, please do not hesitate to contact us directly.
 
 **Installation:** 
 - Explained in detail within instructions.txt file.
