@@ -1,22 +1,30 @@
 # Video-Labeler
-This app allows user to label a video by frame or an image. Using this video labeler, one can label their videos or images to train their Computer vision models. The advantage of having your very own video labeler is that you can develop the addiitonal features that can be useful for you. For instance, this video labeler enables you to test models you built using Detectron2 or Pytorch. Please be aware that the main.py may need to be modified further for other models or libraries.
 
-Installation: Explained in detail within instructions.txt file.
+**Summary:**
+- This app allows user to label a video by frame or an image. Using this video labeler, one can label their videos or images to train their Computer vision models. The advantage of having your very own video labeler is that you can develop the addiitonal features that can be useful for you. For instance, this video labeler enables you to test models you built using Detectron2 or Pytorch. Please be aware that the main.py may need to be modified further for other models or libraries. 
 
-There are 3 tabs available for this video labeler. Tab 1 is used for to work with videos, Tab 2 is used for to work with images. Tab 3 is developed by  the other contributor, Yildirim Kocoglu, to show model performance statistics for computer vision tasks such as mean average precision using COCO style metrics (COCO mAP50, etc.). It also has class tracking capabilities, showing number of instances of each class. This option can help realize unintended mistakes during the labeling process.
+**Sponsorship/Contributions:**
+- This GUI can be improved further. We are open to the idea of further development. If you wish to contribute/sponsor this project and develop additional capabilities or improve upon the existing capabilities that you wish to use, please do not hesitate to contact us directly.
+
+**Installation:** 
+- Explained in detail within instructions.txt file.
+
+**How to use:**
+There are 3 tabs available for this video labeler. Tab 1 & Tab 2 were developed by both Yavuz Can Kocoglu and Yildirim Kocoglu. Tab 1 is used for to work with videos, Tab 2 is used for to work with images. Tab 3 is developed by Yildirim Kocoglu to show model performance statistics for computer vision models using metrics such as mean average precision (COCO style metrics: COCO mAP50, etc.).
 
 You can insert multiple videos or images to label all at once. Right listbox will show the list of videos or images. You delete selected or all of the items in the listbox. You select item by double clicking it, and it will be showed on canvas.
 Videos or images will have different colors and background colors depending on if they are selected, if they haved bbox, polygons or predictions. This feature helps with tracking the available labels.
-  Red background color: If item has no bbox or polygon saved.
+  $${\color{red}Red background color:}$$ If item has no bbox or polygon saved.
   Yellow background color: It has only polygon saved.
   Orange background color: It has only bbox saved.
   White background color: It has both the bbox and polygon saved.
   Blue font color: Selected item.
 
-Insert Bbox: You can activate it by clicking show labels checkbox. Show labels checkbox allows you to load bboxes that are saved and predicted. Insert Bbox allows you add bbox. You must hold left mouse button, and when you release, it finishes drawing it. You can move, modify the bbox.
-Insert Polygon: You can activate it by clicking show polygons checkbox. Show labels checkbox allows you to load polygon that are saved and predicted. Insert Polygon allows you add Polygon. When you right mouse button, it finishes drawing polygon and connects the first and last inserted points. Delete button will delete the last point that was added. Esc button will cancel drawing polygon. You can move, modify the polygon.
-Insert Polygon Point: When you select a polygon, it gets activated. It allows you to add extra point to selected polygon line.
-Delete Polygon Point: When you select a polygon, it gets activated. It allows you to delete polygon point.
+**Insert Bbox:** You can activate it by clicking show labels checkbox. Insert Bbox allows you add the bbox. You must hold left mouse button, and when you release, it finishes drawing it. You can move, modify the bbox. 
+**Show labels**: This checkbox allows you to load bounding boxes (bboxes) that were initially labeled and predicted using your own model. 
+**Insert Polygon:** You can activate it by clicking show polygons checkbox. Show labels checkbox allows you to load polygon that are saved and predicted. Insert Polygon allows you add Polygon. When you right mouse button, it finishes drawing polygon and connects the first and last inserted points. Delete button will delete the last point that was added. Esc button will cancel drawing polygon. You can move, modify the polygon.
+**Insert Polygon Point:** When you select a polygon, it gets activated. It allows you to add extra point to selected polygon line. This is useful for training instance and semantic segmentation models such as Mask-R-CNN, etc.
+**Delete Polygon Point:** When you select a polygon, it gets activated. It allows you to delete that specific polygon point.
 
 Left Side: 
   The number 0 is for class 0 by default. You get the class from a text file "class.txt". The colors switch between ['blue', 'pink', 'cyan', 'green', 'black', 'orange']. For now, there are only 6 classes including class "0". However, one can add more classes themselvess if needed by adding more classes into the "class.txt" file.
@@ -48,6 +56,6 @@ This is an example of semantic segmentation model developed using PointRend. Unl
 
 ![image](https://github.com/yavuzck132/Video-Labeler/blob/master/1691392047415.jpg)
 
-Finally,the COCO mAP metrics tab is shown below (Tab 3 in app). This tab helps you keep track of your model performance. 
+Finally,the COCO mAP metrics tab is shown below (Tab 3 in app). This tab helps you keep track of your model performance. This tab also allows for Precision-Recall curves to be plotted which gives the user a good idea about the performance of their computer vision model. Additionally, you have the option to track the number of labeled classes to avoid labeling mistakes or to simply have an idea of how many traning examples (instances of objects) are available for model training.
 
 ![image](https://github.com/drkocoglu/Video_Labeler/blob/main/1691448861925.jpg) 
