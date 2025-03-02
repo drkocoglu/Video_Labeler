@@ -47,3 +47,7 @@ Example of instance segmentation using the Mask R-CNN model. This is a custom de
 This is an example of semantic segmentation model developed using PointRend. Unlike Faster R-CNN and Mask R-CNN, this model does not differentatiate between multiple objects (especially if they are entangled or intersecting with each other). Rather, it localizes these objects based on the pixels within the images. For instance, in this case below, it segmented the cotton fibers (holographic images) out of the background but, did not differentiate between the background and the fibers. There are two classes in this case (the background and the fibers).
 
 ![image](https://github.com/yavuzck132/Video-Labeler/blob/master/1691392047415.jpg)
+
+Finally,the COCO mAP metrics tab is shown below (Tab 3 in app). This tab helps you keep track of your model performance. 
+
+![image](https://github.com/drkocoglu/Video_Labeler/blob/main/1691448861925.jpg) 
