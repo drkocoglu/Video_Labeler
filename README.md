@@ -31,35 +31,41 @@ Videos or images will have different colors and background colors depending on i
 - The number 0 is for class 0 by default. You get the class from a text file "class.txt". The colors switch between ['blue', 'pink', 'cyan', 'green', 'black', 'orange'].
 - For now, there are only 6 classes including class "0". However, the user should be able to add more classes if needed by adding more classes into the "class.txt" file.
 - When you click **confirm class**, your next bbox or polygon will be will be in that class. If you selected an existing polygon or bbox, it will change the class of that bbox or polygon.
-- **List box** will show the list of models you have. It exists in videos/models and images/models folder. By double clicking the model, you activate it.
-- **Drop box** allows you select between, selected frame, selected video and all the inserted videos options. These options will run your model to detect predictions when you click **detect predictions**.
+
+**List box** will show the list of models you have. It exists in videos/models and images/models folder. By double clicking the model, you activate it.
+**Drop box** allows you select between, selected frame, selected video and all the inserted videos options. These options will run your model to detect predictions when you click **detect predictions**.
 - Detected predictions will be in red color and can't be modified. They will be saved to [images or videos]/predictions/[bbox or polygon]. Predictions can be converted to normal bbox or polygons and modified later like a normal bbox for training purposes.
-- - This option can save you significant amount of time if you wish to use your trained model to help you generate additional labels without having to explicitly add more labels to your video or images. You convert the prediction by clicking on it first and then using the convert prediction option. You can also decide to conver all the predictions into labels but, be aware that this option will convert all of the predictions to training labels. You can still modify or delete your converted bboxes (labels) after this converstion. This option can still save you significant amount of time if there are many objects to detect in a given image with a small number of misdetections.
-  Load prediction checkbox will show prediction if it exists on current frame or image.
-  Show polygon bbox, will draw a bbox around polygons.
-  Zstack labels and predictions are labels that exists and same for one video from beggining frame to end frame.
-  By clicking prev, next, play/stop, reset video buttons, you save the bboxes and polygons you drew.
+  - This option can save you significant amount of time if you wish to use your trained model to help you generate additional labels without having to explicitly add more labels to your video or images.
+  - You convert the prediction by clicking on it first and then using the convert prediction option. You can also decide to convert all the predictions into labels but, be aware that this option will convert all of the predictions to training labels. You can still modify or delete your converted bboxes (labels) after this converstion. This option can still save you significant amount of time if there are many objects to detect in a given image/video with a small number of false predictions (mistakes).
+**Load prediction** checkbox will show prediction if it exists on current frame or image.
+**Show polygon bbox**, will draw a bbox around polygons.
+**Zstack labels** (trainig labels) and **predictions** exist for the same single video and the labels are from beggining frame (frame 1) to the end frame (final frame).
+- By clicking **prev, next, play/stop, reset video** buttons, you can automatically save the bboxes and polygons you drew. Otherwise, these labels may be lost (not saved).
 
-Bbox save:[videos or images]/label_files/[name of the video or image]. Format: "class: x1, y1, x2-x1, y2-y1"
-Predictions save:[videos or images]/predictions/[name of the video or image]. Format: "class: polygon cover points (x1, y1, x2, y2), points"
+**Bbox saved:**[videos or images]/label_files/[name of the video or image]. 
+- **Format:** "class: x1, y1, x2-x1, y2-y1"
 
+**Predictions saved:**[videos or images]/predictions/[name of the video or image].
+- **Format:** "class: polygon cover points (x1, y1, x2, y2), points"
+
+Below is how the GUI looks initially. You are seeing a bounding box (bbox) and a polygon on top of it that was drawn by us as an example.
 ![image](https://user-images.githubusercontent.com/33734353/229110744-3c81ad43-5030-4547-8103-004001259b60.png)
 
 
-BELOW ARE EXAMPLES OF COMPUTER VISION MODELS DEVELOPED USING THIS VIDEO LABELER:
+**BELOW ARE EXAMPLES OF COMPUTER VISION MODELS DEVELOPED USING THIS VIDEO LABELER:**
 
-Example of bounding boxes detected (green boxes) using the Faster R-CNN model. The blue boxes are the labeled boxes. The decision for true positive (TP) or false positive (FP) depends on the selected COCO mAP score (can be changed within the code). In the case below all of the boxes were True positives (TP). The confidence score (in the detection) is given on the top left side of the box. 
+- Example of bounding boxes detected (green boxes) using the Faster R-CNN model. The blue boxes are the labeled boxes. The decision for true positive (TP) or false positive (FP) depends on the selected COCO mAP score (can be changed within the code). In the case below all of the boxes were True positives (TP). The confidence score (in the detection) is given on the top left side of the box. 
 
 ![image](https://github.com/yavuzck132/Video-Labeler/blob/master/1691392097452.jpg)
 
-Example of instance segmentation using the Mask R-CNN model. This is a custom designed rotated bounding boxes and in normal applications, the boxes would not be rotated. This is similar to Faster R-CNN for object detection but, also includes the segmentations in additon to the boxes. Additionally, it segments each object separately. Similarly, the classes and the confidence scores will be displayed on the boxes.
+- Example of instance segmentation using the Mask R-CNN model. This is a custom designed rotated bounding boxes and in normal applications, the boxes would not be rotated. This is similar to Faster R-CNN for object detection but, also includes the segmentations in additon to the boxes. Additionally, it segments each object separately. Similarly, the classes and the confidence scores will be displayed on the boxes.
 
 ![image](https://github.com/yavuzck132/Video-Labeler/blob/master/1691390806339.jpg)
 
-This is an example of semantic segmentation model developed using PointRend. Unlike Faster R-CNN and Mask R-CNN, this model does not differentatiate between multiple objects (especially if they are entangled or intersecting with each other). Rather, it localizes these objects based on the pixels within the images. For instance, in this case below, it segmented the cotton fibers (holographic images) out of the background but, did not differentiate between the background and the fibers. There are two classes in this case (the background and the fibers).
+- This is an example of semantic segmentation model developed using PointRend. Unlike Faster R-CNN and Mask R-CNN, this model does not differentatiate between multiple objects (especially if they are entangled or intersecting with each other). Rather, it localizes these objects based on the pixels within the images. For instance, in this case below, it segmented the cotton fibers (holographic images) out of the background but, did not differentiate between the background and the fibers. There are two classes in this case (the background and the fibers).
 
 ![image](https://github.com/yavuzck132/Video-Labeler/blob/master/1691392047415.jpg)
 
-Finally,the COCO mAP metrics tab is shown below (Tab 3 in app). This tab helps you keep track of your model performance. This tab also allows for Precision-Recall curves to be plotted which gives the user a good idea about the performance of their computer vision model. Additionally, you have the option to track the number of labeled classes to avoid labeling mistakes or to simply have an idea of how many traning examples (instances of objects) are available for model training.
+- Finally,the COCO mAP metrics tab is shown below (Tab 3 in app). This tab helps you keep track of your model performance. This tab also allows for Precision-Recall curves to be plotted which gives the user a good idea about the performance of their computer vision model. Additionally, you have the option to track the number of labeled classes to avoid labeling mistakes or to simply have an idea of how many traning examples (instances of objects) are available for model training.
 
 ![image](https://github.com/drkocoglu/Video_Labeler/blob/main/1691448861925.jpg) 
