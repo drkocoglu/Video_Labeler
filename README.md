@@ -3,7 +3,7 @@ This app allows user to label a video by frame or an image. Using this video lab
 
 Installation: Explained in detail within instructions.txt file.
 
-There are 3 tabs available for this video labeler. Tab 1 is used for to work with videos, Tab 2 is used for to work with images. Tab 3 is developed by  the other contributor, Yildirim Kocoglu, to show model performance statistics for computer vision tasks such as mean average precision using COCO style metrics (COCO mAP50, etc.).
+There are 3 tabs available for this video labeler. Tab 1 is used for to work with videos, Tab 2 is used for to work with images. Tab 3 is developed by  the other contributor, Yildirim Kocoglu, to show model performance statistics for computer vision tasks such as mean average precision using COCO style metrics (COCO mAP50, etc.). It also has class tracking capabilities, showing number of instances of each class. This option can help realize unintended mistakes during the labeling process.
 
 You can insert multiple videos or images to label all at once. Right listbox will show the list of videos or images. You delete selected or all of the items in the listbox. You select item by double clicking it, and it will be showed on canvas.
 Videos or images will have different colors and background colors depending on if they are selected, if they haved bbox, polygons or predictions. This feature helps with tracking the available labels.
