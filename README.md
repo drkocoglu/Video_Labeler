@@ -15,8 +15,8 @@ There are 3 tabs available for this video labeler. Tab 1 & Tab 2 were developed 
 You can insert multiple videos or images to label all at once. Right listbox will show the list of videos or images. You delete selected or all of the items in the listbox. You select item by double clicking it, and it will be showed on canvas.
 Videos or images will have different colors and background colors depending on if they are selected, if they haved bbox, polygons or predictions. This feature helps with tracking the available labels.
 - $${\color{red}Red:}$$ If item has no bbox or polygon saved.
-- $${\color{yellow}Yellow:}$$ It has only polygon saved.
-- $${\color{organe}Orange:}$$ It has only bbox saved.
+- $${\color{darkyellow}Yellow:}$$ It has only polygon saved.
+- $${\color{orange}Orange:}$$ It has only bbox saved.
 - $${\color{black}White:}$$ It has both the bbox and polygon saved.
 - $${\color{blue}Blue:}$$ Selected item.
 
