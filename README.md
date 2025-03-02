@@ -10,15 +10,16 @@
 - Explained in detail within instructions.txt file.
 
 **How to use:**
+
 There are 3 tabs available for this video labeler. Tab 1 & Tab 2 were developed by both Yavuz Can Kocoglu and Yildirim Kocoglu. Tab 1 is used for to work with videos, Tab 2 is used for to work with images. Tab 3 is developed by Yildirim Kocoglu to show model performance statistics for computer vision models using metrics such as mean average precision (COCO style metrics: COCO mAP50, etc.).
 
 You can insert multiple videos or images to label all at once. Right listbox will show the list of videos or images. You delete selected or all of the items in the listbox. You select item by double clicking it, and it will be showed on canvas.
 Videos or images will have different colors and background colors depending on if they are selected, if they haved bbox, polygons or predictions. This feature helps with tracking the available labels.
-- $${\color{red}Red:}$$ If item has no bbox or polygon saved.
-- $${\color{darkyellow}Yellow:}$$ It has only polygon saved.
-- $${\color{orange}Orange:}$$ It has only bbox saved.
-- $${\color{black}White:}$$ It has both the bbox and polygon saved.
-- $${\color{blue}Blue:}$$ Selected item.
+- $${\color{red}Red:}$$ If the video/image has no bbox or polygon saved.
+- $${\color{darkyellow}Yellow:}$$ The video/image has only polygon saved.
+- $${\color{orange}Orange:}$$ The video/image has only bbox saved.
+- $${\color{black}White:}$$ The video/image has both the bbox and polygon saved.
+- $${\color{blue}Blue:}$$ Currently selected video/image.
 
 **Insert Bbox:** You can activate it by clicking show labels checkbox. Insert Bbox allows you add the bbox. You must hold left mouse button, and when you release, it finishes drawing it. You can move, modify the bbox. 
 **Show labels**: This checkbox allows you to load bounding boxes (bboxes) that were initially labeled and predicted using your own model. 
@@ -26,11 +27,14 @@ Videos or images will have different colors and background colors depending on i
 **Insert Polygon Point:** When you select a polygon, it gets activated. It allows you to add extra point to selected polygon line. This is useful for training instance and semantic segmentation models such as Mask-R-CNN, etc.
 **Delete Polygon Point:** When you select a polygon, it gets activated. It allows you to delete that specific polygon point.
 
-Left Side: 
-  The number 0 is for class 0 by default. You get the class from a text file "class.txt". The colors switch between ['blue', 'pink', 'cyan', 'green', 'black', 'orange']. For now, there are only 6 classes including class "0". However, one can add more classes themselvess if needed by adding more classes into the "class.txt" file.
-  When you click confirm class, your next bbox or polygon will be will be in that class. If you selected an existing polygon or bbox, it will change the class of that bbox or polygon.
-  List box will show the list of models you have. It exists in videos/models and images/models folder. By double clicking the model, you activate it. 
-  Drop box allows you select between, selected frame, selected video and all the inserted videos options. These options will run prediction when you click detect predictions. Detected predictions will be in red color and can't be modified. They will be saved to [images or videos]/predictions/[bbox or polygon]. Predictions can be converted to normal bbox or polygons. You convert it by selection or all at once.
+**Left Side of the bbox:** 
+- The number 0 is for class 0 by default. You get the class from a text file "class.txt". The colors switch between ['blue', 'pink', 'cyan', 'green', 'black', 'orange'].
+- For now, there are only 6 classes including class "0". However, the user should be able to add more classes if needed by adding more classes into the "class.txt" file.
+- When you click **confirm class**, your next bbox or polygon will be will be in that class. If you selected an existing polygon or bbox, it will change the class of that bbox or polygon.
+- **List box** will show the list of models you have. It exists in videos/models and images/models folder. By double clicking the model, you activate it.
+- **Drop box** allows you select between, selected frame, selected video and all the inserted videos options. These options will run your model to detect predictions when you click **detect predictions**.
+- Detected predictions will be in red color and can't be modified. They will be saved to [images or videos]/predictions/[bbox or polygon]. Predictions can be converted to normal bbox or polygons and modified later like a normal bbox for training purposes.
+- - This option can save you significant amount of time if you wish to use your trained model to help you generate additional labels without having to explicitly add more labels to your video or images. You convert the prediction by clicking on it first and then using the convert prediction option. You can also decide to conver all the predictions into labels but, be aware that this option will convert all of the predictions to training labels. You can still modify or delete your converted bboxes (labels) after this converstion. This option can still save you significant amount of time if there are many objects to detect in a given image with a small number of misdetections.
   Load prediction checkbox will show prediction if it exists on current frame or image.
   Show polygon bbox, will draw a bbox around polygons.
   Zstack labels and predictions are labels that exists and same for one video from beggining frame to end frame.
